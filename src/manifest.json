@@ -1,6 +1,9 @@
 {
   "{{chrome}}.manifest_version": 3,
   "{{firefox}}.manifest_version": 2,
+  "name": "Firebase Token Extractor",
+  "version": "1.0.0",
+  "description": "Extract Firebase refresh tokens from neetcode.io",
   "icons": {
     "16": "icon/16.png",
     "32": "icon/32.png",
@@ -17,5 +20,13 @@
   "background": {
     "{{chrome}}.service_worker": "src/background.ts",
     "{{firefox}}.scripts": ["src/background.ts"]
-  }
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://neetcode.io/*"
+  ]
 }
